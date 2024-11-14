@@ -1,0 +1,141 @@
+//--------------------------------------------------------------
+//<FORM>
+// Сніппет (HTML):
+.form {
+	&.form-base {
+		display: grid;
+		align-items: start;
+		@include adaptiveValue("gap", 30, 20, 0, $containerWidth, 767.98);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.form__content {
+			display: grid;
+			@include adaptiveValue("row-gap", 15, 10);
+			.form__title {
+				margin: 0;
+				text-align: left;
+			}
+			.form__text {
+				text-align: left;
+			}
+		}
+		.form__labels {
+			display: grid;
+			justify-items: start;
+			@include adaptiveValue("row-gap", 15, 20);
+		}
+		.form__button {
+			@media (max-width: $mobile) {
+				margin: 0 auto;
+			}
+		}
+	}
+	// .form__title
+	&__title {
+		margin: 0 auto;
+		font-weight: 700;
+		line-height: 125%;
+		text-align: center;
+		color: $narativeColor;
+		max-width: toRem(455);
+		@include adaptiveValue("font-size", 25, 18);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 35, 20);
+		}
+	}
+	// .form__labels
+	&__labels {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 45, 25);
+		}
+	}
+	// .form__inputs
+	&__inputs {
+		display: grid;
+		margin: 0 auto;
+		@include adaptiveValue("gap", 25, 12);
+		&.inputs-consult {
+			@media (min-width: $mobileSmall) {
+				max-width: toRem(685);
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		&.inputs-serve-video {
+			@media (min-width: $tablet) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		&.inputs-serve-photo {
+			width: 100%;
+			@media (min-width: $tablet) {
+				gap: toRem(15);
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+	// .form__bottom
+	&__bottom {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		@include adaptiveValue("gap", 30, 15);
+	}
+	// .form__text
+	&__text {
+		line-height: 125%;
+		text-align: center;
+		max-width: toRem(630);
+		color: $narativeColor;
+		@include adaptiveValue("font-size", 22, 16);
+	}
+	// .form__button
+	&__button {
+		&.button {
+			@include adaptiveValue("padding-left", 60, 20);
+			@include adaptiveValue("padding-right", 60, 20);
+		}
+	}
+	// .form__error
+	&__error {
+		display: none;
+	}
+}
+//</FORM>
+//--------------------------------------------------------------
+// <BUTTONS>
+// Сніппет (HTML): btn
+@import "button";
+//--------------------------------------------------------------
+// <INPUTS>
+// Сніппет (HTML): inp
+@import "input";
+//--------------------------------------------------------------
+// <CHECK>
+// Сніппет (HTML): chk
+// @import "checkbox";
+//--------------------------------------------------------------
+// <RADIO>
+// Сніппет (HTML): opt
+// @import "radio";
+//--------------------------------------------------------------
+// <SELECT>
+// Сніппет (HTML): sel
+// @import "select";
+//--------------------------------------------------------------
+// <RATING>
+// Сніппет (HTML): rating
+// @import "rating";
+//--------------------------------------------------------------
+// <QUANTITY>
+// Сніппет (HTML): qa
+// @import "quantity";
+//--------------------------------------------------------------
+// <RANGE>
+// Сніппет (HTML):
+// @import "range";
+//--------------------------------------------------------------
+// <CALENDAR>
+// Сніппет (HTML):
+// @import "datepicker";
+//--------------------------------------------------------------

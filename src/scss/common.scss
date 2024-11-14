@@ -1,0 +1,133 @@
+//========================================================================================================================================================
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+::-webkit-scrollbar {
+	width: toRem(1);
+	border-radius: toRem(10);
+	background-color: $bgColor;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: toRem(10);
+	background-color: $mainColor;
+}
+::selection {
+	background-color: rgba(#a60101, 0.5);
+}
+summary {
+	list-style: none;
+	&::marker {
+		display: none;
+	}
+}
+@supports (-webkit-appearance: none) {
+	summary::-webkit-details-marker {
+		display: none;
+	}
+}
+//========================================================================================================================================================
+// Title & Text & Img
+.title {
+	font-weight: 700;
+	line-height: 125%;
+	color: $narativeColor;
+	@include adaptiveValue("font-size", 40, 24);
+	&--center {
+		text-align: center;
+	}
+	&--mr {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 20);
+		}
+	}
+}
+.text {
+	line-height: 125%;
+	text-align: justify;
+	@include adaptiveValue("font-size", 22, 14);
+	a {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: red;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.img {
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease 0s;
+	}
+}
+//========================================================================================================================================================
+// Shadow
+.shad {
+	transition: box-shadow 0.5s ease 0s;
+	box-shadow:
+		rgba(14, 63, 126, 0.03) 0px 0px 0px 1px,
+		rgba(42, 51, 69, 0.03) 0px 1px 1px -0.5px,
+		rgba(42, 51, 70, 0.03) 0px 3px 3px -1.5px,
+		rgba(42, 51, 70, 0.03) 0px 6px 6px -3px,
+		rgba(14, 63, 126, 0.03) 0px 12px 12px -6px,
+		rgba(14, 63, 126, 0.03) 0px 24px 24px -12px;
+	&.shad-hv {
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: rgba(14, 63, 126, 0.35) 0px 20px 34px -5px;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+// Record
+.record {
+	overflow: hidden;
+	position: relative;
+	@include adaptiveValue("border-radius", 25, 15);
+	// .record__video
+	&__video {
+		height: 100%;
+		object-fit: cover;
+		transform: scale(1.05);
+		&.video-pointer {
+			cursor: pointer;
+		}
+	}
+	// .record__button
+	&__button {
+		left: 0;
+		top: 50%;
+		right: 0;
+		display: flex;
+		margin: 0 auto;
+		width: toRem(60);
+		height: toRem(60);
+		color: $mainColor;
+		position: absolute;
+		border-radius: 50%;
+		align-items: center;
+		font-size: toRem(28);
+		padding-left: toRem(4);
+		justify-content: center;
+		transform: translate(0px, -50%);
+		background-color: rgba($bgColor, 0.75);
+		transition:
+			background-color 0.4s ease 0s,
+			opacity 0.4s ease 0s,
+			visibility 0.4s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($bgColor, 1);
+			}
+		}
+		&.play-btn-disable {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+//========================================================================================================================================================

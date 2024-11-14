@@ -1,0 +1,55 @@
+// Button
+.button {
+	overflow: hidden;
+	padding: 0px 0px;
+	position: relative;
+	text-align: center;
+	border-radius: 30px;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	background: $gradientLight;
+	border: 1px solid $narativeColor;
+	transition: box-shadow 0.7s ease 0s;
+	box-shadow:
+		rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+		rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+		rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+		rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
+		rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
+		rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+	@include adaptiveValue("font-size", 22, 14);
+	@include adaptiveValue("min-height", 60, 42);
+	&::before {
+		top: 0;
+		left: 0;
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-radius: 30px;
+		background: $gradientNarative;
+		transition: left 0.7s ease 0s;
+	}
+	span {
+		z-index: 1;
+		color: $bgColor;
+		font-weight: 700;
+		position: relative;
+		transition: color 0.7s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: rgba(14, 63, 126, 0.28) 0px 10px 17px -5px;
+			span {
+				color: rgba($mainColor, 0.85);
+			}
+			&::before {
+				left: -100%;
+			}
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}

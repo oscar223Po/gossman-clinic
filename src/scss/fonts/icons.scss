@@ -1,0 +1,70 @@
+//========================================================================================================================================================
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&::before {
+		@extend %ic;
+	}
+}
+//========================================================================================================================================================
+// Fonts Of Icons
+._icon-arrow:before {
+	content: "\e900";
+}
+._icon-body-01:before {
+	content: "\e901";
+}
+._icon-body-02:before {
+	content: "\e902";
+}
+._icon-body-03:before {
+	content: "\e903";
+}
+._icon-body-04:before {
+	content: "\e904";
+}
+._icon-body-05:before {
+	content: "\e905";
+}
+._icon-body-06:before {
+	content: "\e906";
+}
+._icon-body-07:before {
+	content: "\e907";
+}
+._icon-body-08:before {
+	content: "\e908";
+}
+._icon-bookmark:before {
+	content: "\e909";
+}
+._icon-cancel:before {
+	content: "\e90a";
+}
+._icon-location:before {
+	content: "\e90b";
+}
+._icon-logo:before {
+	content: "\e90c";
+}
+._icon-play:before {
+	content: "\e90d";
+}
+._icon-social-in:before {
+	content: "\e90e";
+}
+._icon-social-ph:before {
+	content: "\e90f";
+}
+._icon-social-tg:before {
+	content: "\e910";
+}
+//========================================================================================================================================================

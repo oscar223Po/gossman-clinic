@@ -1,0 +1,140 @@
+// Базові стилі спойлерів
+// Сніппет (HTML): spoller
+
+// Блок зі спойлерами
+.spollers {
+	display: grid;
+	background: linear-gradient(119deg, #f0ece7 0%, #eadbbe 100%);
+	@include adaptiveValue("padding-left", 90, 25);
+	@include adaptiveValue("padding-right", 90, 25);
+	@include adaptiveValue("border-radius", 35, 20);
+}
+// Спойлер
+.spollers__item {
+	font-size: toRem(20);
+	@include adaptiveValue("padding-top", 20, 10);
+	@include adaptiveValue("padding-bottom", 20, 10);
+	&:not(:last-child) {
+		border-bottom: toRem(1) solid $narativeColor;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			.spollers__title {
+				color: rgba($mainColor, 0.75);
+				._spoller-init & {
+					&::before,
+					&::after {
+						background-color: rgba($mainColor, 0.75);
+					}
+				}
+			}
+		}
+	}
+}
+// Заголовок спойлера
+.spollers__title {
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	font-size: 30px;
+	list-style: none;
+	font-weight: 700;
+	line-height: 125%;
+	position: relative;
+	color: $narativeColor;
+	border-radius: toRem(5);
+	padding-right: toRem(35);
+	transition: color 0.5s ease 0s;
+	@include adaptiveValue("font-size", 30, 18);
+	@include adaptiveValue("padding-top", 20, 10);
+	@include adaptiveValue("padding-bottom", 20, 10);
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+	}
+	._spoller-init & {
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			background-color: $narativeColor;
+			height: 2.5px;
+			border-radius: toRem(10);
+			transition:
+				transform 0.5s ease 0s,
+				opacity 0.5s ease 0s,
+				background-color 0.5s ease 0s;
+			@include adaptiveValue("width", 20, 15);
+		}
+		&::before {
+			transform: rotate(90deg);
+		}
+		&._spoller-active {
+			color: rgba($mainColor, 0.75);
+			&::before,
+			&::after {
+				background-color: rgba($mainColor, 0.75);
+			}
+			&::before {
+				transform: rotate(0deg);
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			&::before,
+			&::after {
+				height: 2px;
+			}
+		}
+		/*
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: toRem(12);
+				height: toRem(1);
+				transition: all 0.3s ease 0s;
+				width: toRem(10);
+				background-color: #000;
+			}
+			&::before {
+				transform: rotate(40deg);
+				right: toRem(7);
+			}
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		*/
+	}
+}
+// Контент спойлера
+.spollers__body {
+	@include adaptiveValue("padding-bottom", 20, 10);
+}
+
+// Текст спойлера
+.spollers__text {
+	max-width: 84.615385%;
+	@include adaptiveValue("font-size", 25, 18);
+	p {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 10);
+		}
+	}
+}

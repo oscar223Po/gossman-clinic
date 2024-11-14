@@ -1,0 +1,126 @@
+// Header
+.header {
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+	background-color: $bgColor;
+	transition: box-shadow 0.5s ease 0s;
+	box-shadow:
+		rgba(14, 63, 126, 0.02) 0px 0px 0px 1px,
+		rgba(42, 51, 69, 0.02) 0px 1px 1px -0.5px,
+		rgba(42, 51, 70, 0.02) 0px 3px 3px -1.5px,
+		rgba(42, 51, 70, 0.02) 0px 6px 6px -3px,
+		rgba(14, 63, 126, 0.02) 0px 12px 12px -6px,
+		rgba(14, 63, 126, 0.02) 0px 24px 24px -12px;
+	&._header-scroll {
+		box-shadow:
+			rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+			rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+			rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+			rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
+			rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
+			rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+		@media (min-width: $mobile) {
+			.header__container {
+				padding-bottom: toRem(16);
+				@include adaptiveValue("padding-top", 27, 18, 2, $containerWidth, 767.98);
+			}
+		}
+	}
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		transition: padding 0.5s ease 0s;
+		@include adaptiveValue("padding-top", 55, 35, 2, $containerWidth, 767.98);
+		@include adaptiveValue("padding-bottom", 20, 18, 2, $containerWidth, 767.98);
+		@media (max-width: $mobile) {
+			align-items: center;
+			min-height: toRem(70);
+		}
+	}
+	// .header__aside
+	&__aside {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 50, 15, 2, $containerWidth, 767.98);
+		@media (max-width: $mobile) {
+			gap: toRem(12);
+			flex-direction: row-reverse;
+		}
+	}
+	// .header__logo
+	&__logo {
+		z-index: 1;
+		display: flex;
+		align-items: end;
+		position: relative;
+		min-height: toRem(32);
+		color: $narativeColor;
+		transition: color 0.5s ease 0s;
+		@include adaptiveValue("font-size", 36, 22, 2, $containerWidth, 767.98);
+		@include adaptiveValue("padding-bottom", 0, 2, 2, $containerWidth, 767.98);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+		@media (max-width: $mobile) {
+			padding-bottom: toRem(3);
+		}
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__phone
+	&__phone {
+		z-index: 1;
+		display: flex;
+		position: relative;
+		align-items: center;
+		flex-direction: column;
+		@include adaptiveValue("gap", 10, 7, 2, $containerWidth, 767.98);
+		@include adaptiveValue("padding-bottom", 7, 3, 2, $containerWidth, 767.98);
+		span {
+			color: #1c2332;
+			font-size: toRem(17);
+		}
+		a {
+			color: $narativeColor;
+			span {
+				font-weight: 700;
+				color: $narativeColor;
+				transition: color 0.5s ease 0s;
+				@include adaptiveValue("font-size", 22, 18, 2, $containerWidth, 767.98);
+			}
+			&::before {
+				font-size: toRem(32);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					span {
+						color: red;
+					}
+				}
+			}
+			@media (min-width: $mobile) {
+				&::before {
+					display: none;
+				}
+			}
+		}
+		@media (max-width: $mobile) {
+			span {
+				display: none;
+			}
+			a {
+				@media (max-width: $mobile) {
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

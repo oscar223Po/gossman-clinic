@@ -1,0 +1,235 @@
+// ========================================================================================================================================================
+// Base Styles
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+.popup-show body::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+}
+.popup_show {
+	z-index: 150;
+	visibility: visible;
+	overflow: auto;
+	pointer-events: auto;
+}
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background-color: #fafaf9;
+	width: 100%;
+	max-width: 900px;
+	border-radius: 20px;
+	box-shadow:
+		rgba(14, 63, 126, 0.03) 0px 0px 0px 1px,
+		rgba(42, 51, 69, 0.03) 0px 1px 1px -0.5px,
+		rgba(42, 51, 70, 0.03) 0px 3px 3px -1.5px,
+		rgba(42, 51, 70, 0.03) 0px 6px 6px -3px,
+		rgba(14, 63, 126, 0.03) 0px 12px 12px -6px,
+		rgba(14, 63, 126, 0.03) 0px 24px 24px -12px;
+	@include adaptiveValue("padding-top", 20, 15);
+	@include adaptiveValue("padding-bottom", 55, 25);
+	.lock & {
+		visibility: visible;
+	}
+	&.consult {
+		max-width: 860px;
+		@include adaptiveValue("padding-left", 20, 15);
+		@include adaptiveValue("padding-right", 20, 15);
+	}
+	&.serve-video,
+	&.serve-photo {
+		max-width: 1190px;
+		@include adaptiveValue("padding-left", 40, 15);
+		@include adaptiveValue("padding-right", 40, 15);
+	}
+}
+.popup__head {
+	display: grid;
+	align-items: center;
+	justify-content: space-between;
+	grid-template-columns: toRem(42) auto toRem(42);
+	&::before {
+		content: "";
+	}
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 40, 20);
+	}
+	@media (max-width: $mobile) {
+		grid-template-columns: toRem(32) auto toRem(32);
+	}
+}
+.popup__close {
+	width: 42px;
+	height: 42px;
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	background-color: #d5d5d4;
+	transition: background-color 0.5s ease 0s;
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+	svg {
+		width: toRem(20);
+		height: toRem(20);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: rgba(red, 0.75);
+		}
+	}
+	@media (max-width: $mobile) {
+		width: 32px;
+		height: 32px;
+		svg {
+			width: toRem(15);
+			height: toRem(15);
+		}
+	}
+}
+.popup__logo {
+	display: flex;
+	align-items: center;
+	font-size: toRem(25);
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.35);
+	@media (max-width: $mobile) {
+		font-size: toRem(20);
+	}
+}
+.popup__title {
+	text-align: center;
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 45, 20);
+	}
+}
+// ========================================================================================================================================================
+// Popup Service Styles
+.serve {
+	// .serve__bottom
+	&__bottom {
+		display: grid;
+		@include adaptiveValue("gap", 25, 15);
+	}
+	// .serve__tip
+	&__tip {
+		font-weight: 700;
+		color: $narativeColor;
+	}
+}
+// ========================================================================================================================================================
+// Popup Serve Video
+.serve-video {
+	// .serve-video__content
+	&__content {
+		display: grid;
+		grid-template-columns: 35.565217% auto;
+		@include adaptiveValue("gap", 40, 25, 0, $containerWidth, 991.98);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 35, 25);
+		}
+		@media (max-width: $tablet) {
+			align-items: start;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: auto;
+		}
+	}
+	// .serve-video__aside
+	&__aside {
+		@media (min-width: $mobile) {
+			display: grid;
+			row-gap: toRem(20);
+			grid-template-rows: 1fr auto;
+		}
+	}
+	// .serve-video__text
+	&__text {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+}
+// ========================================================================================================================================================
+// Popup Serve Photo
+.serve-photo {
+	// .serve-photo__images
+	&__images {
+		width: 100%;
+		display: grid;
+		margin: 0 auto;
+		max-width: toRem(770);
+		justify-content: space-between;
+		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("gap", 70, 10);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 50, 20);
+		}
+	}
+	// .serve-photo__image
+	&__image {
+		text-align: center;
+	}
+	// .serve-photo__image-label
+	&__image-label {
+		@include adaptiveValue("font-size", 22, 15);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 15, 12);
+		}
+	}
+	// .serve-photo__image-img
+	&__image-img {
+		@include adaptiveValue("border-radius", 25, 15);
+		@media (any-hover: hover) {
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	// .serve-photo__form
+	&__form {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 35, 25);
+		}
+	}
+}
+// ========================================================================================================================================================

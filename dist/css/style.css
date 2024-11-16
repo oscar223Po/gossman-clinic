@@ -1142,7 +1142,7 @@ summary::marker {
 }
 .item-service {
   opacity: 0;
-  transition: opacity .7s ease .1s;
+  transition: opacity .7s ease .1s,box-shadow .5s ease 0s;
   outline: 0;
   overflow: hidden;
   position: relative;

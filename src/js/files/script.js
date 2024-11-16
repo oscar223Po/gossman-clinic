@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 			}
 		});
+		document.addEventListener("popupClosed", function () {
+			videos.forEach((video) => {
+				if (!video.paused) {
+					video.pause();
+					video.classList.remove("video-pointer");
+					buttons.forEach((button) => button.classList.remove('play-btn-disable'));
+				}
+			});
+		});
 	}
 	// ================[ JavaScript Tabs Animation ]================
 	const tabTitles = document.querySelectorAll('.tabs__title');

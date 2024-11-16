@@ -262,6 +262,11 @@ class Popup {
 		if (!this.isOpen || !bodyLockStatus) {
 			return;
 		}
+
+		// Новое событие для остановки видео при закрытии попапа
+		const eventClosePopup = new CustomEvent("popupClosed");
+		document.dispatchEvent(eventClosePopup);
+
 		// До закриття
 		this.options.on.beforeClose(this);
 		// Створюємо свою подію перед закриттям попапа
@@ -276,6 +281,7 @@ class Popup {
 			if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
 				this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
 		}
+
 		this.previousOpen.element.classList.remove(this.options.classes.popupActive);
 		// aria-hidden
 		this.previousOpen.element.setAttribute('aria-hidden', 'true');

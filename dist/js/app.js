@@ -4337,6 +4337,8 @@
             close(selectorValue) {
                 if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") this.previousOpen.selector = selectorValue;
                 if (!this.isOpen || !bodyLockStatus) return;
+                const eventClosePopup = new CustomEvent("popupClosed");
+                document.dispatchEvent(eventClosePopup);
                 this.options.on.beforeClose(this);
                 document.dispatchEvent(new CustomEvent("beforePopupClose", {
                     detail: {
@@ -8119,25 +8121,36 @@
             window.addEventListener("scroll", handleScroll);
             const videos = document.querySelectorAll(".record__video");
             const buttons = document.querySelectorAll(".record__button");
-            if (videos !== null) videos.forEach(((video, index) => {
-                const videoButton = buttons[index];
-                if (video !== null && videoButton !== null) {
-                    videoButton.addEventListener("click", (function() {
-                        if (video.paused) {
-                            video.play();
-                            video.classList.add("video-pointer");
-                            videoButton.classList.add("play-btn-disable");
-                        }
-                    }));
-                    video.addEventListener("click", (function() {
+            if (videos !== null) {
+                videos.forEach(((video, index) => {
+                    const videoButton = buttons[index];
+                    if (video !== null && videoButton !== null) {
+                        videoButton.addEventListener("click", (function() {
+                            if (video.paused) {
+                                video.play();
+                                video.classList.add("video-pointer");
+                                videoButton.classList.add("play-btn-disable");
+                            }
+                        }));
+                        video.addEventListener("click", (function() {
+                            if (!video.paused) {
+                                video.pause();
+                                video.classList.remove("video-pointer");
+                                videoButton.classList.remove("play-btn-disable");
+                            }
+                        }));
+                    }
+                }));
+                document.addEventListener("popupClosed", (function() {
+                    videos.forEach((video => {
                         if (!video.paused) {
                             video.pause();
                             video.classList.remove("video-pointer");
-                            videoButton.classList.remove("play-btn-disable");
+                            buttons.forEach((button => button.classList.remove("play-btn-disable")));
                         }
                     }));
-                }
-            }));
+                }));
+            }
             const tabTitles = document.querySelectorAll(".tabs__title");
             const tabNavigation = document.querySelector(".tabs__navigation");
             if (tabTitles !== null) tabTitles.forEach((title => {

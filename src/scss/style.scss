@@ -80,6 +80,8 @@ body {
 	}
 	// Сайт завантажений
 	.loaded & {
+		opacity: 1;
+		transition: opacity 0.4s ease 0.15s;
 	}
 }
 // Оболонка wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -641,6 +643,11 @@ body {
 	}
 }
 .item-service {
+	opacity: 0;
+	transition: opacity 0.7s ease 0.1s;
+	&._watcher-view {
+		opacity: 1;
+	}
 	outline: none;
 	overflow: hidden;
 	position: relative;
@@ -843,6 +850,11 @@ body {
 	}
 }
 .review-item {
+	opacity: 0;
+	transition: opacity 0.7s ease 0.1s, box-shadow 0.5s ease 0s;
+	&._watcher-view {
+		opacity: 1;
+	}
 	display: grid;
 	outline: none;
 	text-align: left;

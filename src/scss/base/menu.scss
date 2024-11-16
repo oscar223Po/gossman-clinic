@@ -66,6 +66,12 @@
 		position: relative;
 		transition: color 0.5s ease 0s;
 		@include adaptiveValue("font-size", 22, 17, 2, $containerWidth, 767.98);
+		&._navigator-active {
+			color: $narativeColor;
+			&::before {
+				width: 100%;
+			}
+		}
 		@media (min-width: $mobile) {
 			&::before {
 				width: 0;

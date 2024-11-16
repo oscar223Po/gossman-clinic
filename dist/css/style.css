@@ -161,6 +161,10 @@ body {
   -ms-scroll-chaining: none;
   overscroll-behavior: none
 }
+.loaded body {
+  opacity: 1;
+  transition: opacity .4s ease .15s
+}
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -373,6 +377,12 @@ textarea.input._form-error::placeholder {
   color: #1c2332;
   position: relative;
   transition: color .5s ease 0s
+}
+.menu__link._navigator-active {
+  color: #877966
+}
+.menu__link._navigator-active::before {
+  width: 100%
 }
 .menu__socials {
   display: grid;
@@ -1131,10 +1141,15 @@ summary::marker {
   display: grid
 }
 .item-service {
+  opacity: 0;
+  transition: opacity .7s ease .1s;
   outline: 0;
   overflow: hidden;
   position: relative;
   border-radius: 1.25rem
+}
+.item-service._watcher-view {
+  opacity: 1
 }
 .item-service.item-service-logo {
   display: flex;
@@ -1224,6 +1239,8 @@ summary::marker {
   transition: color .5s ease 0s
 }
 .review-item {
+  opacity: 0;
+  transition: opacity .7s ease .1s,box-shadow .5s ease 0s;
   display: grid;
   outline: 0;
   text-align: left;
@@ -1231,6 +1248,9 @@ summary::marker {
   background-color: #f6f7f8;
   grid-template-rows: 1fr auto;
   border: .0625rem solid #ecebeb
+}
+.review-item._watcher-view {
+  opacity: 1
 }
 .review-item.review-item-sm {
   top: 0;

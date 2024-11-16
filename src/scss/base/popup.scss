@@ -68,7 +68,8 @@ body::after {
 	.lock & {
 		visibility: visible;
 	}
-	&.consult {
+	&.consult,
+	&.leave {
 		max-width: 860px;
 		@include adaptiveValue("padding-left", 20, 15);
 		@include adaptiveValue("padding-right", 20, 15);
@@ -78,6 +79,16 @@ body::after {
 		max-width: 1190px;
 		@include adaptiveValue("padding-left", 40, 15);
 		@include adaptiveValue("padding-right", 40, 15);
+	}
+	&.view {
+		@include adaptiveValue("padding-left", 40, 15);
+		@include adaptiveValue("padding-right", 40, 15);
+		@include adaptiveValue("max-width", 960, 760, 0, $containerWidth, 767.98);
+	}
+	&.reviews {
+		max-width: 1350px;
+		@include adaptiveValue("padding-left", 20, 15);
+		@include adaptiveValue("padding-right", 20, 15);
 	}
 }
 .popup__head {
@@ -230,6 +241,97 @@ body::after {
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 35, 25);
 		}
+	}
+}
+// ========================================================================================================================================================
+// Popup Review
+.view {
+	// .view__body
+	&__body {
+		margin: 0 auto;
+		max-width: toRem(780);
+	}
+	// .view__title
+	&__title {
+		font-weight: 700;
+		line-height: 125%;
+		text-align: center;
+		color: $narativeColor;
+		@include adaptiveValue("font-size", 25, 18);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 15);
+		}
+	}
+	// .view__text
+	&__text {
+		&.text {
+			@include adaptiveValue("font-size", 22, 14);
+		}
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .view__post
+	&__post {
+		text-align: right;
+	}
+	// .view__post date & source
+	&__post-date,
+	&__post-source {
+		color: #000000;
+		font-weight: 700;
+		line-height: 120%;
+		@include adaptiveValue("font-size", 20, 14);
+	}
+}
+// ========================================================================================================================================================
+// Popup Reviews
+.reviews {
+	// .reviews__body
+	&__body {
+	}
+	// .reviews__columns
+	&__columns {
+		display: grid;
+		align-items: start;
+		grid-auto-rows: auto;
+		@include adaptiveValue("gap", 20, 10);
+		grid-template-columns: repeat(3, 1fr);
+		.review-item {
+			gap: 0;
+		}
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: auto;
+		}
+	}
+	// .reviews__item
+	&__item {
+		display: grid;
+		@include adaptiveValue("gap", 20, 10);
+		.review-item__content {
+			width: 100%;
+		}
+		@media (max-width: $tablet) {
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+	// .reviews__button
+	&__button {
+		display: flex;
+		margin: 0 auto;
+		@include adaptiveValue("margin-top", 40, 20);
+		@include adaptiveValue("padding-left", 70, 25);
+		@include adaptiveValue("padding-right", 70, 25);
 	}
 }
 // ========================================================================================================================================================

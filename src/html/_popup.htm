@@ -49,7 +49,7 @@
 				<div class="serve-video__content">
 					<div class="serve-video__record record shad shad-hv">
 						<video class="record__video" width="100%" height="100%" loop>
-							<source src="@img/video.mp4" type="video/mp4">
+							<source src="../src/video.mp4" type="video/mp4">
 						</video>
 						<button type="button" class="record__button _icon-play"></button>
 					</div>
@@ -138,6 +138,373 @@
 						<p>Попасть на консультацию к доктору в Москве или во Владивостоке, вы можете, просто заполнив заявку на нашем сайте или позвонив по телефону:  <a href="tel:89147917100">89147917100</a></p>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // ======================================================================================================================================================== -->
+<!-- Popup Leave Review -->
+<div id="leave" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content leave">
+			<div class="popup__head">
+				<div class="popup__logo _icon-logo"></div>
+				<button data-close type="button" class="popup__close">
+					<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#ffffff" stroke-linecap="square" />
+						<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#ffffff" stroke-linecap="square" />
+					</svg>
+				</button>
+			</div>
+			<form action="" class="leave__form form">
+				<h5 class="form__title">Напишите свой отзыв</h5>
+				<div class="form__labels labels-leave">
+					<div class="form__inputs inputs-leave">
+						<input data-required="text" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="ФИО" class="input">
+						<input data-required="tel" data-inputmask="'mask': '+7-999-999-99-99'" autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Телефон" class="input">
+						<input data-required="email" autocomplete="off" type="email" name="form[]" data-error="Error" placeholder="E-mail" class="input">
+					</div>
+					<div class="form__textarea">
+						<textarea data-required="text" autocomplete="off" name="form[]" placeholder="Текст отзыва" data-error="Error" class="input"></textarea>
+					</div>
+				</div>
+				<div class="form__bottom">
+					<div class="form__text">
+						<p>Нажимая отправить вы соглашаетесь с политикой обработки персональных данных и разрешает публикацию отзыва на данном сайте</p>
+					</div>
+					<button type="submit" class="form__button button"><span>Оставить отзыв</span></button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- // ======================================================================================================================================================== -->
+<!-- Popup Feedback -->
+<div id="feedback" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content view">
+			<div class="popup__head">
+				<div class="popup__logo _icon-logo"></div>
+				<button data-close type="button" class="popup__close">
+					<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#ffffff" stroke-linecap="square" />
+						<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#ffffff" stroke-linecap="square" />
+					</svg>
+				</button>
+			</div>
+			<div class="view__body">
+				<h5 class="view__title">Капустина Виктория Сергеевна</h5>
+				<div class="view__text text">
+					<p>Впервые к Станиславу Сергеевичу Гроссману обратился несколько лет назад. Была проблема, потом две операции и... Про болезнь уже забыл. Врач - золотые руки, профессионал от Бога, диагност, хирург и т. д. Писать дифирамбы можно долго и с удовольствием! Не так давно пришлось обратиться с уже другой проблемой, и опять решить её помог этот прекрасный специалист и отличный, дружный коллектив клиники "Алёнка". Минимальные сроки от обращения, диагноза до операции. Была сделана операция по квоте, и в кратчайшие сроки я смог почувствовать себя значительно лучше! Однозначно всячески рекомендую всем клинику "Алёнка" и Гроссмана Станислава Сергеевича, как настоящих профессионалов, помогающих вновь встать в строй!</p>
+				</div>
+				<div class="view__post">
+					<div class="view__post-date">3 июня 2020</div>
+					<div class="view__post-source">Источник: Продокторов</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // ======================================================================================================================================================== -->
+<div id="reviews" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content reviews">
+			<div class="popup__head">
+				<div class="popup__logo _icon-logo"></div>
+				<button data-close type="button" class="popup__close">
+					<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#ffffff" stroke-linecap="square" />
+						<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#ffffff" stroke-linecap="square" />
+					</svg>
+				</button>
+			</div>
+			<div class="reviews__body">
+				<h3 class="popup__title title">Отзывы наших клиентов</h3>
+				<ul class="reviews__columns">
+					<li class="reviews__item">
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Обратилась по вопросу увеличения молочных желез. Меня полностью проконсультировали, подобрали нужный размер и удобную дату. На операцию шла полностью подготовлена, все анализы были изучены Станиславом Сергеевичем, поэтому волнения не было. Операция прошла быстро и легко, результат отличный. Отношение всей команды было на высоте. Даже спустя время про меня не забывают, проводят осмотр и интересуются моим здоровьем. Безумно рада, что выбрала данного хирурга.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Впервые к Станиславу Сергеевичу Гроссману обратился несколько лет назад. Была проблема, потом две операции и... Про болезнь уже забыл. Врач - золотые руки, профессионал от Бога, диагност, хирург и т. д. Писать дифирамбы можно долго и с удовольствием! Не так давно пришлось обратиться с уже другой проблемой, и опять решить её помог этот прекрасный специалист и отличный, дружный коллектив клиники "Алёнка". Минимальные сроки от обращения, диагноза до операции. Была сделана операция по квоте, и в кратчайшие сроки я смог почувствовать себя значительно лучше! Однозначно всячески рекомендую всем клинику "Алёнка" и Гроссмана Станислава Сергеевича, как настоящих профессионалов, помогающих вновь встать в строй!</p>
+										<p>Понравилось</p>
+										<p>Профессионалы высочайшего уровня; - современная клиника с отличным оборудованием; - отличный уход; -доброжелательность, вежливость, предупредительность.</p>
+										<p>Не понравилось</p>
+										<p>Недостатков нет.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Обратилась по вопросу увеличения молочных желез. Меня полностью проконсультировали, подобрали нужный размер и удобную дату. На операцию шла полностью подготовлена, все анализы были изучены Станиславом Сергеевичем, поэтому волнения не было. Операция прошла быстро и легко, результат отличный. Отношение всей команды было на высоте. Даже спустя время про меня не забывают, проводят осмотр и интересуются моим здоровьем. Безумно рада, что выбрала данного хирурга.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Впервые к Станиславу Сергеевичу Гроссману обратился несколько лет назад. Была проблема, потом две операции и... Про болезнь уже забыл. Врач - золотые руки, профессионал от Бога, диагност, хирург и т. д. Писать дифирамбы можно долго и с удовольствием! Не так давно пришлось обратиться с уже другой проблемой, и опять решить её помог этот прекрасный специалист и отличный, дружный коллектив клиники "Алёнка". Минимальные сроки от обращения, диагноза до операции. Была сделана операция по квоте, и в кратчайшие сроки я смог почувствовать себя значительно лучше! Однозначно всячески рекомендую всем клинику "Алёнка" и Гроссмана Станислава Сергеевича, как настоящих профессионалов, помогающих вновь встать в строй!</p>
+										<p>Понравилось</p>
+										<p>Профессионалы высочайшего уровня; - современная клиника с отличным оборудованием; - отличный уход; -доброжелательность, вежливость, предупредительность.</p>
+										<p>Не понравилось</p>
+										<p>Недостатков нет.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Обратилась по вопросу увеличения молочных желез. Меня полностью проконсультировали, подобрали нужный размер и удобную дату. На операцию шла полностью подготовлена, все анализы были изучены Станиславом Сергеевичем, поэтому волнения не было. Операция прошла быстро и легко, результат отличный. Отношение всей команды было на высоте. Даже спустя время про меня не забывают, проводят осмотр и интересуются моим здоровьем. Безумно рада, что выбрала данного хирурга.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Впервые к Станиславу Сергеевичу Гроссману обратился несколько лет назад. Была проблема, потом две операции и... Про болезнь уже забыл. Врач - золотые руки, профессионал от Бога, диагност, хирург и т. д. Писать дифирамбы можно долго и с удовольствием! Не так давно пришлось обратиться с уже другой проблемой, и опять решить её помог этот прекрасный специалист и отличный, дружный коллектив клиники "Алёнка". Минимальные сроки от обращения, диагноза до операции. Была сделана операция по квоте, и в кратчайшие сроки я смог почувствовать себя значительно лучше! Однозначно всячески рекомендую всем клинику "Алёнка" и Гроссмана Станислава Сергеевича, как настоящих профессионалов, помогающих вновь встать в строй!</p>
+										<p>Понравилось</p>
+										<p>Профессионалы высочайшего уровня; - современная клиника с отличным оборудованием; - отличный уход; -доброжелательность, вежливость, предупредительность.</p>
+										<p>Не понравилось</p>
+										<p>Недостатков нет.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+					</li>
+					<li class="reviews__item">
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Гроссман Станислав Сергеевич - врач будущего! В 60 лет, по рекомендации друзей, обратился за консультацией к Станиславу Сергеевичу по поводу пупочной грыжи! Жизненная проблема решилась мгновенно, и через неделю, действуя по плану подготовки к операции, я был прооперирован эндоскопически по современной технологии с установкой на грыжевое отверстие специальной сетки! Прошло 1, 5 года, рецидива нет, веду активный образ жизни, работа, рыбалка, тайга, огород! Нагрузки бывают серьезные. Станислав Сергеевич, спасибо Вам большое за качественно новую жизнь. Вы удивительным образом умеете формировать вокруг себя пространство профессионализма и надежности, чего так не хватает многим из нас! Отделение хирургии на высоте, великолепная бригада анестезиологов и постовых медицинских сестёр и братьев. Безусловно, всем буду рекомендовать на решение хирургических проблем к Гроссману Станиславу Сергеевичу!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Очень рекомендую эту клинику. Гроссман и команда врачей и сестёр, которые меня оперировали - супер! Я со своей проблемой обращалась ко многим врачам, отдала кучу денег, настрадалась от постоянных болей, от лечения, которое мне не помогало. Станислав Сергеевич сразу сказал, что надо делать, и сделал для меня всё. Дай Бог ему сил и терпения в его нелегком труде.</p>
+										<p>Понравилось</p>
+										<p>Станислав Сергеевич - мой спаситель! Спасибо большое за помощь, которую он оказал. После операции вернул меня к нормальной и спокойной жизни. Очень внимательный, чуткий и замечательный доктор.</p>
+										<p>Не понравилось</p>
+										<p>Всё в клинике понравилось - отношение медперсонала на высшем уровне.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Гроссман Станислав Сергеевич - врач будущего! В 60 лет, по рекомендации друзей, обратился за консультацией к Станиславу Сергеевичу по поводу пупочной грыжи! Жизненная проблема решилась мгновенно, и через неделю, действуя по плану подготовки к операции, я был прооперирован эндоскопически по современной технологии с установкой на грыжевое отверстие специальной сетки! Прошло 1, 5 года, рецидива нет, веду активный образ жизни, работа, рыбалка, тайга, огород! Нагрузки бывают серьезные. Станислав Сергеевич, спасибо Вам большое за качественно новую жизнь. Вы удивительным образом умеете формировать вокруг себя пространство профессионализма и надежности, чего так не хватает многим из нас! Отделение хирургии на высоте, великолепная бригада анестезиологов и постовых медицинских сестёр и братьев. Безусловно, всем буду рекомендовать на решение хирургических проблем к Гроссману Станиславу Сергеевичу!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Очень рекомендую эту клинику. Гроссман и команда врачей и сестёр, которые меня оперировали - супер! Я со своей проблемой обращалась ко многим врачам, отдала кучу денег, настрадалась от постоянных болей, от лечения, которое мне не помогало. Станислав Сергеевич сразу сказал, что надо делать, и сделал для меня всё. Дай Бог ему сил и терпения в его нелегком труде.</p>
+										<p>Понравилось</p>
+										<p>Станислав Сергеевич - мой спаситель! Спасибо большое за помощь, которую он оказал. После операции вернул меня к нормальной и спокойной жизни. Очень внимательный, чуткий и замечательный доктор.</p>
+										<p>Не понравилось</p>
+										<p>Всё в клинике понравилось - отношение медперсонала на высшем уровне.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Гроссман Станислав Сергеевич - врач будущего! В 60 лет, по рекомендации друзей, обратился за консультацией к Станиславу Сергеевичу по поводу пупочной грыжи! Жизненная проблема решилась мгновенно, и через неделю, действуя по плану подготовки к операции, я был прооперирован эндоскопически по современной технологии с установкой на грыжевое отверстие специальной сетки! Прошло 1, 5 года, рецидива нет, веду активный образ жизни, работа, рыбалка, тайга, огород! Нагрузки бывают серьезные. Станислав Сергеевич, спасибо Вам большое за качественно новую жизнь. Вы удивительным образом умеете формировать вокруг себя пространство профессионализма и надежности, чего так не хватает многим из нас! Отделение хирургии на высоте, великолепная бригада анестезиологов и постовых медицинских сестёр и братьев. Безусловно, всем буду рекомендовать на решение хирургических проблем к Гроссману Станиславу Сергеевичу!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Очень рекомендую эту клинику. Гроссман и команда врачей и сестёр, которые меня оперировали - супер! Я со своей проблемой обращалась ко многим врачам, отдала кучу денег, настрадалась от постоянных болей, от лечения, которое мне не помогало. Станислав Сергеевич сразу сказал, что надо делать, и сделал для меня всё. Дай Бог ему сил и терпения в его нелегком труде.</p>
+										<p>Понравилось</p>
+										<p>Станислав Сергеевич - мой спаситель! Спасибо большое за помощь, которую он оказал. После операции вернул меня к нормальной и спокойной жизни. Очень внимательный, чуткий и замечательный доктор.</p>
+										<p>Не понравилось</p>
+										<p>Всё в клинике понравилось - отношение медперсонала на высшем уровне.</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+					</li>
+					<li class="reviews__item">
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Первая встреча с Гроссманом Станиславом Сергеевичем у меня состоялась в больнице РЖД в 2014 году, когда поставили диагноз ЗНО прямой кишки. Врач от Бога. Операция прошла успешно. Благодаря этому врачу, до сих пор живу полноценной жизнью, продолжаю работать. До сих пор консультируюсь в случае возникновения каких-то вопросов. Отзывчивый, внимательный человек, профессионал своего дела, каких в современной медицине встретишь редко. Станислав Сергеевич относится к тем, кто обладает силой духа, способен исцелять болезни и, с полной уверенностью, может быть назван настоящим врачом. Имею опят обращения в разные годы к докторам, но такого специалиста встретишь редко. Обязательно рекомендую, если кого-то беспокоят проблемы жизни и здоровья в области хирургии, обратитесь к Гроссману С. С. У Дмитрия Потемкина есть замечательные стихи: Благодарны мы вам, Кто лежал и пошел. Кто здоровье у вас В вашем сердце нашел. Хочется пожелать здоровья и ещё немало спасенных судеб. С уважением,</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm visible swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Станислав Сергеевич врач с большой буквы! Профессионал своего дела! Не могу найти слов, чтобы описать то с какой внимательностью и заботой он относится к своим пациентам. Мы с мужем очень довольны тем, что выбрали именно этого врача для проведения операции! Побольше бы таких врачей! Храни Вас бог!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Первая встреча с Гроссманом Станиславом Сергеевичем у меня состоялась в больнице РЖД в 2014 году, когда поставили диагноз ЗНО прямой кишки. Врач от Бога. Операция прошла успешно. Благодаря этому врачу, до сих пор живу полноценной жизнью, продолжаю работать. До сих пор консультируюсь в случае возникновения каких-то вопросов. Отзывчивый, внимательный человек, профессионал своего дела, каких в современной медицине встретишь редко. Станислав Сергеевич относится к тем, кто обладает силой духа, способен исцелять болезни и, с полной уверенностью, может быть назван настоящим врачом. Имею опят обращения в разные годы к докторам, но такого специалиста встретишь редко. Обязательно рекомендую, если кого-то беспокоят проблемы жизни и здоровья в области хирургии, обратитесь к Гроссману С. С. У Дмитрия Потемкина есть замечательные стихи: Благодарны мы вам, Кто лежал и пошел. Кто здоровье у вас В вашем сердце нашел. Хочется пожелать здоровья и ещё немало спасенных судеб. С уважением,</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Станислав Сергеевич врач с большой буквы! Профессионал своего дела! Не могу найти слов, чтобы описать то с какой внимательностью и заботой он относится к своим пациентам. Мы с мужем очень довольны тем, что выбрали именно этого врача для проведения операции! Побольше бы таких врачей! Храни Вас бог!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Первая встреча с Гроссманом Станиславом Сергеевичем у меня состоялась в больнице РЖД в 2014 году, когда поставили диагноз ЗНО прямой кишки. Врач от Бога. Операция прошла успешно. Благодаря этому врачу, до сих пор живу полноценной жизнью, продолжаю работать. До сих пор консультируюсь в случае возникновения каких-то вопросов. Отзывчивый, внимательный человек, профессионал своего дела, каких в современной медицине встретишь редко. Станислав Сергеевич относится к тем, кто обладает силой духа, способен исцелять болезни и, с полной уверенностью, может быть назван настоящим врачом. Имею опят обращения в разные годы к докторам, но такого специалиста встретишь редко. Обязательно рекомендую, если кого-то беспокоят проблемы жизни и здоровья в области хирургии, обратитесь к Гроссману С. С. У Дмитрия Потемкина есть замечательные стихи: Благодарны мы вам, Кто лежал и пошел. Кто здоровье у вас В вашем сердце нашел. Хочется пожелать здоровья и ещё немало спасенных судеб. С уважением,</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" data-popup="#feedback" class="review__slide review-item review-item-sm swiper-slide shad shad-hv">
+							<div class="review-item__content">
+								<div class="review-item__head">
+									<h5 class="review-item__title">Капустина Виктория Сергеевна</h5>
+									<div class="review-item__text">
+										<p>Станислав Сергеевич врач с большой буквы! Профессионал своего дела! Не могу найти слов, чтобы описать то с какой внимательностью и заботой он относится к своим пациентам. Мы с мужем очень довольны тем, что выбрали именно этого врача для проведения операции! Побольше бы таких врачей! Храни Вас бог!</p>
+									</div>
+								</div>
+								<div class="review-item__post">
+									<div class="review-item__post-date">3 июня 2020</div>
+									<div class="review-item__post-source">Источник: Продокторов</div>
+								</div>
+							</div>
+						</button>
+					</li>
+				</ul>
+				<button type="button" class="reviews__button button"><span>Посмотреть ещё</span></button>
 			</div>
 		</div>
 	</div>

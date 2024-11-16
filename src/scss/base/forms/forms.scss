@@ -49,6 +49,11 @@
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 45, 25);
 		}
+		&.labels-leave {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: toRem(720);
+		}
 	}
 	// .form__inputs
 	&__inputs {
@@ -71,6 +76,14 @@
 			@media (min-width: $tablet) {
 				gap: toRem(15);
 				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		&.inputs-leave {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 30, 17);
+			}
+			@media (min-width: $mobile) {
+				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 	}

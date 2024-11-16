@@ -50,5 +50,12 @@ textarea {
 
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	padding: 20px;
+	min-height: 277px;
+	border-radius: 20px;
+	&._form-error {
+		&::placeholder {
+			color: red;
+		}
+	}
 }

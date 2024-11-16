@@ -131,3 +131,36 @@ summary {
 	}
 }
 //========================================================================================================================================================
+// Controlls
+.controlls {
+	display: flex;
+	align-items: center;
+	@include adaptiveValue("gap", 20, 8);
+	// .controlls__arrow
+	&__arrow {
+		display: flex;
+		align-items: center;
+		border-radius: toRem(8);
+		justify-content: center;
+		background-color: #ede6d9;
+		transition:
+			background-color 0.5s ease 0s,
+			box-shadow 0.5s ease 0s;
+		@include adaptiveValue("width", 58, 35);
+		@include adaptiveValue("height", 58, 35);
+		@include adaptiveValue("font-size", 22, 14);
+		&.swiper-button-disabled {
+			background-color: #faf6f2;
+		}
+		// .controlls__arrow--prev
+		&--prev {
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+		// .controlls__arrow--next
+		&--next {
+		}
+	}
+}
+//========================================================================================================================================================

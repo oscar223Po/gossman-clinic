@@ -1,1 +1,102 @@
 // Footer
+.footer {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	background: linear-gradient(-90deg, #ffffff 0%, #e9e6e2 100%);
+	@include adaptiveValue("margin-top", 100, 45);
+	// .footer__container
+	&__container {
+		@include adaptiveValue("padding-top", 40, 25);
+		@include adaptiveValue("padding-bottom", 80, 35);
+		@media (min-width: toEm(814.98)) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	// .footer__tabs
+	&__tabs {
+		@media (max-width: toEm(814.98)) {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 45, 30);
+			}
+		}
+	}
+	// .footer__aside
+	&__aside {
+		display: grid;
+		@include adaptiveValue("row-gap", 40, 20);
+		@media (min-width: toEm(814.98)) {
+			align-self: start;
+			justify-content: end;
+		}
+	}
+	// .footer__button
+	&__button {
+		display: flex;
+		@include adaptiveValue("padding-left", 50, 25);
+		@include adaptiveValue("padding-right", 50, 25);
+		@media (min-width: toEm(814.98)) {
+			margin: toRem(0) toRem(0) toRem(0) auto;
+		}
+	}
+	// .footer__actions
+	&__actions {
+		width: 100%;
+		display: flex;
+		justify-self: end;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .footer__contacts
+	&__contacts {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 22, 10, 0, $containerWidth, 814.98);
+		@media (max-width: toEm(814.98)) {
+			@include adaptiveValue("gap", 10, 5, 0, 814.98, 320);
+		}
+	}
+	// .footer__social
+	&__social {
+		color: $narativeColor;
+		transition: color 0.4s ease 0s;
+		@include adaptiveValue("font-size", 54, 42);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+	// .footer__phone
+	&__phone {
+		z-index: 1;
+		display: flex;
+		position: relative;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: toRem(3);
+		@include adaptiveValue("gap", 10, 7);
+		span {
+			color: #1c2332;
+			@include adaptiveValue("font-size", 20, 16);
+		}
+		a {
+			font-weight: 700;
+			color: $narativeColor;
+			transition: color 0.5s ease 0s;
+			@include adaptiveValue("font-size", 29, 18);
+			&::before {
+				font-size: toRem(32);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					color: red;
+				}
+			}
+		}
+	}
+	// .footer__socials
+	&__socials {
+		display: flex;
+		align-items: center;
+	}
+}

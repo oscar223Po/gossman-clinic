@@ -133,14 +133,12 @@
 		@include adaptiveValue("border-radius", 20, 10);
 		iframe {
 			width: 100%;
-			transform: scale(1.017);
+			margin-bottom: toRem(-3);
 			@include adaptiveValue("min-height", 345, 245);
 		}
 		@media (max-width: toEm(814.98)) {
 			width: 100%;
 			max-width: 100%;
 		}
-		/* 		@media (min-width: toEm(814.98)) {
-		} */
 	}
 }

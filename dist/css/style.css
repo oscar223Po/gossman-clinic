@@ -715,8 +715,7 @@ body::after {
 }
 .tabs__body iframe {
   width: 100%;
-  -webkit-transform: scale(1.017);
-  transform: scale(1.017)
+  margin-bottom: -.1875rem
 }
 .ibg {
   width: 100%;

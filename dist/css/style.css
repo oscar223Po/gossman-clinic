@@ -780,7 +780,8 @@ summary::marker {
   text-align: justify
 }
 .text a {
-  transition: color .3s ease 0s
+  color: red;
+  transition: color .5s ease 0s
 }
 .img {
   overflow: hidden
@@ -1155,25 +1156,6 @@ summary::marker {
   display: flex;
   align-items: center;
   justify-content: center
-}
-.item-service:nth-child(10)::after,
-.item-service:nth-child(13)::after,
-.item-service:nth-child(14)::after,
-.item-service:nth-child(15)::after,
-.item-service:nth-child(8)::after {
-  left: 0;
-  right: 0;
-  top: -50%;
-  content: "";
-  width: 150%;
-  height: 100%;
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  border-radius: 30%;
-  position: absolute;
-  -webkit-transform: translate(-25%,-15%);
-  transform: translate(-25%,-15%);
-  background-color: rgba(255,255,255,.8)
 }
 .item-service:nth-child(4) .item-service__icon {
   top: 52%;
@@ -3273,7 +3255,7 @@ summary::marker {
     background-color: rgba(0,0,0,.75)
   }
   .text a:hover {
-    color: red;
+    color: #000;
     text-decoration: underline
   }
   .shad.shad-hv:hover {

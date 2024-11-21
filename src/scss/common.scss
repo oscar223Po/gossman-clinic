@@ -45,10 +45,11 @@ summary {
 	text-align: justify;
 	@include adaptiveValue("font-size", 22, 14);
 	a {
-		transition: color 0.3s ease 0s;
+		color: red;
+		transition: color 0.5s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: red;
+				color: $mainColor;
 				text-decoration: underline;
 			}
 		}

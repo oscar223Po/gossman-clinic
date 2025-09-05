@@ -1,4 +1,4 @@
-# 👨‍⚕️ Dr.Gossman — Plastic Surgeon
+# 👨‍⚕️ Dr. Gossman — Plastic Surgeon
 
 The website for Dr. Gossman, built with a robust tech stack, the website focuses on delivering an intuitive user experience, providing detailed information on services, patient testimonials, and contact options. It adapts seamlessly across different devices, ensuring users have a smooth experience, whether they are on a desktop, tablet, or mobile.
 
